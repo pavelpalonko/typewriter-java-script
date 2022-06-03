@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <title>Typewriter</title>
+</head>
+
+<body>
+
+  <div class="result">
+    <button class="close">x</button>
+    <div class="result_title">Ваши резултаты:</div>
+    <div class="result_container">
+      <div class="result_sub-wrapp">
+        <span>ОШИБОК: </span>
+        <div class="result_errors"></div>
+      </div>
+      <div class="result_sub-wrapp">
+        <span>ВРЕМЯ: </span>
+        <div class="result_speed"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="controls__elements">
+
+    <div class="contorls__box">
+      <div  class="controls__sub-box">
+        <span>ОШИБОК</span>
+        <span id="errors">0</span>
+      </div>
+
+      <div id="time" class="controls__sub-box">
+        <span>ВРЕМЯ:</span>
+        <span class="minutes">00</span>
+        <span>:</span>
+        <span class="seconds">00</span>
+      </div>
+
+    </div>
+    <div class="controls_сharacters"></div>
+    <div class="contorls__box">
+
+      <div class="controls__sub-box">
+        <a class="restart_icon" target="_blank">
+          <i class="fas fa-redo" data-reset="reset"></i>
+        </a>
+      </div>
+
+      <div class="controls__sub-box">
+        <a class="keyboard__icon" target="_blank">
+          <i class="far fa-keyboard"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!--Board-->
+
+  <div class="textRoad">
+    <div class="previewText">Нажмите "Enter" для старта!</div>
+    <pre class="textOpacity"></pre>
+    <div class="cursor"></div>
+    <pre class="currentText"></pre>
+  </div>
+
+  <!--Keyboard-->
+  <div class="Keyboard" id="showKeyboard">
+    <!--Normal keys-->
+    <div class="keyboard__default">
+      <!--Ё 1 2 3 4 5 6 7 8 9 0 - = backSPASE-->
+      <div class="row">
+
+        <div id="Backquote">ё</div>
+
+        <div id="Digit1" data-value="!">1</div>
+
+        <div id="Digit2" data-value='"'>2</div>
+
+        <div id="Digit3" data-value="№">3</div>
+
+        <div id="Digit4" data-value=";">4</div>
+
+        <div id="Digit5" data-value="%">5</div>
+
+        <div id="Digit6" data-value=":">6</div>
+
+        <div id="Digit7" data-value="?">7</div>
+
+        <div id="Digit8" data-value="*">8</div>
+
+        <div id="Digit9" data-value="(">9</div>
+
+        <div id="Digit0" data-value=")">0</div>
+
+        <div id="Minus" data-value="_">–</div>
+
+        <div id="Equal" data-value="+">=</div>
+
+        <div id="Backspace"> ←</div>
+
+      </div>
+      <!--Tab й ц у к е н г ш щ з х ъ \-->
+      <div class="row">
+
+        <div id="Tab"> Tab</div>
+
+        <div id="KeyQ" data-value-key="keyType">й</div>
+
+        <div id="KeyW" data-value-key="keyType"> ц </div>
+
+        <div id="KeyE" data-value-key="keyType">у</div>
+
+        <div id="KeyR" data-value-key="keyType">к</div>
+
+        <div id="KeyT" data-value-key="keyType">е</div>
+
+        <div id="KeyY" data-value-key="keyType">н</div>
+
+        <div id="KeyU" data-value-key="keyType">г</div>
+
+        <div id="KeyI" data-value-key="keyType"> ш</div>
+
+        <div id="KeyO" data-value-key="keyType">щ</div>
+
+        <div id="KeyP" data-value-key="keyType">з</div>
+
+        <div id="BracketLeft" data-value-key="keyType">х</div>
+
+        <div id="BracketRight" data-value-key="keyType">ъ</div>
+
+        <div id="Backslash"> \</div>
+
+      </div>
+      <!--Caps ф ы в а п р о л д ж э Enter-->
+      <div class="row">
+
+        <div id="CapsLock"> Caps</div>
+
+        <div class="keyAll" id="KeyA" data-value-key="keyType">ф</div>
+
+        <div id="KeyS" data-value-key="keyType">ы</div>
+
+        <div id="KeyD" data-value-key="keyType">в</div>
+
+        <div id="KeyF" data-value-key="keyType">а</div>
+
+        <div id="KeyG" data-value-key="keyType">п</div>
+
+        <div id="KeyH" data-value-key="keyType">р</div>
+
+        <div id="KeyJ" data-value-key="keyType">о</div>
+
+        <div id="KeyK" data-value-key="keyType">л</div>
+
+        <div id="KeyL" data-value-key="keyType">д</div>
+
+        <div id="Semicolon" data-value-key="keyType">ж</div>
+
+        <div id="Quote" data-value-key="keyType">э</div>
+
+        <div id="Enter">Enter</div>
+
+      </div>
+      <!--Shift я ч с м и т ь б ю . Shift-->
+      <div class="row">
+
+        <div id="ShiftLeft"> Shift</div>
+
+        <div id="KeyZ" data-value-key="keyType">я</div>
+
+        <div id="KeyX" data-value-key="keyType">ч</div>
+
+        <div id="KeyC" data-value-key="keyType">с</div>
+
+        <div id="KeyV" data-value-key="keyType">м</div>
+
+        <div id="KeyB" data-value-key="keyType">и</div>
+
+        <div id="KeyN" data-value-key="keyType"> т</div>
+
+        <div id="KeyM" data-value-key="keyType"> ь</div>
+
+        <div id="Comma" data-value-key="keyType">б</div>
+
+        <div id="Period" data-value-key="keyType"> ю</div>
+
+        <div id="Slash" data-value="," data-value-key="keyType">.</div>
+
+        <div id="ShiftRight">Shift</div>
+
+      </div>
+      <!--Space-->
+      <div class="row rowSpace">
+
+        <div id="Space" data-value-key="keyType"></div>
+
+      </div>
+
+    </div>
+  </div>
+  <!--scripts-->
+  <script src="app.js"></script>
+</body>
+
+</html>
